@@ -1,0 +1,34 @@
+/* Escribir un programa que lea un número y muestre en pantalla el valor de su factorial. */
+
+package diseño;
+
+import javax.swing.JOptionPane;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Aleja Valbuena
+ */
+public class Parcial1Elecc1p2 {
+    public static void main(String[] args) {
+        int num1=0, f=1;
+        
+       
+        
+        num1 = Integer.parseInt(JOptionPane.showInputDialog(" Número al factorizar"));
+
+        if (num1 > 0 ) {
+            for (int i = 1; i <= num1; i++) {
+                JOptionPane.showMessageDialog(null, f *= i );
+            }
+        }else{
+           JOptionPane.showMessageDialog(null, "No se puede factorizar por cero" ); 
+        }
+
+    }
+}
