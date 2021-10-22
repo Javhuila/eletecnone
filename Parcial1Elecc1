@@ -1,0 +1,32 @@
+/* Leer dos números del teclado y presentar el número mayor en pantalla. */
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package diseño;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Aleja Valbuena
+ */
+public class Parcial1Elecc1 {
+    public static void main(String[] args) {
+        int num1=0, num2=0;
+        num1 = Integer.parseInt(JOptionPane.showInputDialog(" por favor ingrese el primer número"));
+        num2 = Integer.parseInt(JOptionPane.showInputDialog(" por favor ingrese el segundo número"));
+
+        
+        if (num1 > num2) {
+            JOptionPane.showMessageDialog(null, "El numero mayor es el numeró uno: " + num1);
+        }else if (num1 == num2) {
+                JOptionPane.showMessageDialog(null, "Ambos números son iguales " + num1 +"\n" + num2);
+            }else{
+                JOptionPane.showMessageDialog(null, "El numero mayor es el número dos: " + num2);
+            
+        }
+    }
+}
