@@ -1,0 +1,132 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package calc;
+
+/**
+ *
+ * @author Jeferson Andrés Valbuena Huila
+ */
+public class Accalc {
+    private String digitar;
+    private double resultado;
+    private boolean Adiccionar;
+    private boolean Sustraer;
+    private boolean Multiplicar;
+    private boolean Dividir;
+    private boolean Sin;
+    private boolean Cos;
+    private boolean Tan;
+    
+    
+    public Accalc (){
+        digitar = "";
+        resultado = 0;
+        Adiccionar = false;
+        Sustraer = false;
+        Multiplicar = false;
+        Dividir = false;
+        Sin = false;
+        Cos = false;
+        Tan = false;
+    }
+
+    //Obtener un digito
+    public String getDigitar() {
+        return digitar;
+    }
+
+    //Añadir un digito
+    public void setDigitar(String digitar) {
+        this.digitar = digitar;
+    }
+    
+    public void agregarNum(int num){
+        setDigitar(digitar+num);
+    }
+    
+    public void Sumar(String num){
+        this.resultado = Double.parseDouble(num);
+        Adiccionar = true;
+        setDigitar("");
+    }
+    
+    public void Restar(String num){
+        this.resultado = Double.parseDouble(num);
+        Sustraer = true;
+        setDigitar("");
+    }
+    
+    public void Multiplicar(String num){
+        this.resultado = Double.parseDouble(num);
+        Multiplicar = true;
+        setDigitar("");
+    }
+    
+    public void Dividir(String num){
+        this.resultado = Double.parseDouble(num);
+        Dividir = true;
+        setDigitar("");
+    }
+    
+    public double calcular_result(String num3){
+        if (Adiccionar == true) {
+            resultado = resultado + Double.parseDouble(num3);
+        }
+        if (Sustraer == true) {
+            resultado = resultado - Double.parseDouble(num3);
+        }
+        if (Multiplicar == true) {
+            resultado = resultado * Double.parseDouble(num3);
+        }
+        if (Dividir == true) {
+            resultado = resultado / Double.parseDouble(num3);
+        }
+        if (Sin == true) {
+            resultado = Math.sin(Math.toRadians(resultado));
+        }
+        if (Cos == true) {
+            resultado = Math.cos(Math.toRadians(resultado));
+        }
+        if (Tan == true) {
+            resultado = Math.tan(Math.toRadians(resultado));
+        }
+        
+        //Resetear Valores
+        Adiccionar = false;
+        Sustraer = false;
+        Multiplicar = false;
+        Dividir = false;
+        Sin = false;
+        Cos = false;
+        Tan = false;
+        
+        //Retornar el valor del Método Booleano
+        return resultado;
+    }
+    
+    public String limpiar(String vaciar){
+        this.digitar = vaciar;
+        return this.digitar;
+    }
+    
+    public void Seno(String num){
+        this.resultado = Double.parseDouble(num);
+        Sin = true;
+        setDigitar("");
+    }
+    
+    public void Coseno(String num){
+        this.resultado = Double.parseDouble(num);
+        Cos = true;
+        setDigitar("");
+    }
+    
+    public void Tangente(String num){
+        this.resultado = Double.parseDouble(num);
+        Tan = true;
+        setDigitar("");
+    }
+}
